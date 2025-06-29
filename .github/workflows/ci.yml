@@ -42,12 +42,11 @@ jobs:
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v6
       with:
-        image: drashtipatel27/ci_cd_demo
-        registry: registry-url.io
-        # dockerfile: Dockerfile.ci
+        context: .
+        push: true
+        tags: drashtipatel27/ci_cd_demo:latest
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
-
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
     #
