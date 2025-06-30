@@ -42,7 +42,7 @@ jobs:
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v6
       with:
-        context: .
+        context: Dockerfile
         push: true
         tags: drashtipatel27/ci_cd_demo:latest
         username: ${{ secrets.DOCKERHUB_USERNAME }}
